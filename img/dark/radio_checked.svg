@@ -1,0 +1,4 @@
+<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <circle class="outer" fill="#424242" cx="32" cy="32" r="32"></circle>
+    <circle class="inner" fill="#007de7" cx="32" cy="32" r="14"></circle>
+</svg>

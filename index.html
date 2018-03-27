@@ -1,0 +1,289 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="js/simpleCheck.min.js"></script>
+        <script src="https://logosart.de/simpleCheck/js/highlight.js"></script>
+        <link rel="stylesheet" href="css/simpleCheck.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://logosart.de/simpleCheck/css/github.css">
+        <title>simpleCheck - Demo</title>
+    </head>
+    <body>
+        <div id="main">
+            <div id="light">
+                <div class="container">
+                    <h1>simpleCheck Demo</h1>
+                    <div id="code">
+                        <h2>Usage</h2>
+                        <p>Init Checkbox</p>
+<pre><code id="check1block" class="javascript">$('input[type=checkbox]').simpleCheck('init');</code></pre>
+                        <p>Init Radio</p>
+<pre><code id="radio1block" class="javascript">$('input[type=radio]').simpleCheck('init');</code></pre>
+                        <p>Init Switch</p>
+<pre><code id="switch1block" class="javascript">var switchSettings = {
+    isSwitch: true
+};
+
+$('input[type=checkbox]').simpleCheck(switchSettings);</code></pre>
+                        <p>Disable/Enable Input</p>
+<pre><code id="check2block" class="javascript">$('input[type=checkbox]').simpleCheck('disable'); //Disable
+$('input[type=checkbox]').simpleCheck('enable'); //Enable</code></pre>
+                        <p>or normal jQuery</p>
+<pre><code id="check2block" class="javascript">$('input[type=checkbox]').prop('disabled', true); //Disable
+$('input[type=checkbox]').prop('disabled', false); //Enable
+
+$('input[type=checkbox]').attr('disabled', true); //Disable
+$('input[type=checkbox]').attr('disabled', false); //Enable
+</code></pre>
+                        <p>Check/Uncheck Input</p>
+<pre><code id="check3block" class="javascript">$('input[type=checkbox]').simpleCheck('uncheck'); //Uncheck
+$('input[type=checkbox]').simpleCheck('check'); //Check</code></pre>
+                        <p>or normal jQuery</p>
+<pre><code id="check2block" class="javascript">$('input[type=checkbox]').prop('checked', false); //Uncheck
+$('input[type=checkbox]').prop('checked', true); //Check
+
+$('input[type=checkbox]').attr('checked', false); //Uncheck
+$('input[type=checkbox]').attr('checked', true); //Check
+</code></pre>
+                        <p>Available Settings</p>
+<pre><code id="jsonblock" class="javascript">var defaultSettings = {
+    theme: 'light', /* 'light' or 'dark' */
+    isSwitch: false, /* is a switch or not (only a checkbox can be a switch)*/
+    checkbox: {
+        defaultClass: 'simpleCheck', /* Default class for checkbox */
+        checkedClass: 'simpleCheck-checked', /* Checked class for checkbox */
+        disabledClass: 'simpleCheck-disabled' /* Disabled class for checkbox */
+    },
+    radio: {
+        defaultClass: 'simpleCheck', /* Default class for radio */
+        radioClass: 'radio', /*Radio button class*/
+        checkedClass: 'simpleCheck-checked', /* Checked class for radio */
+        disabledClass: 'simpleCheck-disabled' /* Disabled class for radio */
+    },
+    switch: {
+        defaultClass: 'simpleCheck', /* Default class for switch */
+        switchClass: 'switch', /* Switch class */
+        checkedClass: 'simpleCheck-checked', /* Checked class for switch */
+        disabledClass: 'simpleCheck-disabled' /* Disabled class for switch */
+    }
+};</code></pre>
+                        <br>
+                        <h2>Events</h2>
+                        <p class="eventName">simpleCheckStateChanged</p>
+                        <p class="eventDescription">
+                            Triggered when the check state of a checkbox, radio or switch is changed.
+                        </p>
+                        <br>
+                        <p class="eventName">simpleEnableStateChanged</p>
+                        <p class="eventDescription">
+                            Triggered when the enable state of a checkbox, radio or switch is changed.
+                        </p>
+                        <br>
+                        <p class="eventName">simpleChecked</p>
+                        <p class="eventDescription">
+                            Triggered when a checkbox, radio or switch is checked.
+                        </p>
+                        <br>
+                        <p class="eventName">simpleUnchecked</p>
+                        <p class="eventDescription">
+                            Triggered when a checkbox, radio or switch is unchecked.
+                        </p>
+                        <br>
+                        <p class="eventName">simpleEnabled</p>
+                        <p class="eventDescription">
+                            Triggered when a checkbox, radio or switch is enabled.
+                        </p>
+                        <br>
+                        <p class="eventName">simpleDisabled</p>
+                        <p class="eventDescription">
+                            Triggered when a checkbox, radio or switch is disabled.
+                        </p>
+                    </div>
+                    <br>
+                    <div id="check">
+                        <h1>Example</h1>
+                        <h2>Checkbox</h2>
+                        <input id="checkbox1" type="checkbox" name="checkbox1">
+                        <label for="checkbox1">Checkbox #1</label>
+                        <br>
+                        <input type="checkbox" name="checkbox2">
+                        <label for="checkbox2">Checkbox #2</label>
+                        <br>
+                        <input type="checkbox" name="checkbox3">
+                        <label for="checkbox3">Checkbox #3</label>
+                        <br>
+                        <input type="checkbox" name="checkbox4">
+                        <label for="checkbox4">Checkbox #4</label>
+                        <br>
+                        <p>Disabled Checkbox</p>
+                        <input  id="disabledCheckbox" type="checkbox" name="disabledCheckbox">
+                        <label for="disabledCheckbox">Disabled Checkbox</label>
+                        <br>
+                        <input  id="disabledCheckboxChecked" type="checkbox" name="disabledCheckboxChecked">
+                        <label for="disabledCheckboxChecked">Disabled Checkbox Checked</label>
+                    </div>
+                    <div id="radio">
+                        <h2>Radio</h2>
+                        <form>
+                        <input id="radio1" type="radio" name="radio">
+                        <label for="radio1">Radio #1</label>
+                        <br>
+                        <input id="radio2" type="radio" name="radio">
+                        <label for="radio2">Radio #2</label>
+                        <br>
+                        <input id="radio3" type="radio" name="radio">
+                        <label for="radio3">Radio #3</label>
+                        <br>
+                        <input id="radio4" type="radio" name="radio">
+                        <label for="radio4">Radio #4</label>
+                        </form>
+                        <p>Disabled Checkbox</p>
+                        <input  id="disabledRadio" type="radio" name="disabledRadio">
+                        <label for="disabledRadio">Disabled Radio</label>
+                        <br>
+                        <input  id="disabledRadioChecked" type="radio" name="disabledRadioChecked">
+                        <label for="disabledRadioChecked">Disabled Radio Checked</label>
+                    </div>
+                    <div id="switch">
+                        <h2>Switch</h2>
+                        <input type="checkbox" name="switch1">
+                        <label for="switch1">Switch #1</label>
+                        <br>
+                        <input type="checkbox" name="switch2">
+                        <label for="switch2">Switch #2</label>
+                        <br>
+                        <input type="checkbox" name="switch3">
+                        <label for="switch3">Switch #3</label>
+                        <br>
+                        <input type="checkbox" name="switch4">
+                        <label for="switch4">Switch #4</label>
+                        <br>
+                        <p>Disabled Switch</p>
+                        <input  id="disabledSwitch" type="checkbox" name="disabledSwitch">
+                        <label for="disabledSwitch">Disabled Switch</label>
+                        <br>
+                        <input  id="disabledSwitchChecked" type="checkbox" name="disabledSwitchChecked">
+                        <label for="disabledSwitchChecked">Disabled Switch Checked</label>
+                    </div>
+                </div>
+            </div>
+            <div id="dark">
+                <div class="container">
+                    <h1 id="darkTheme">Dark</h1>
+                    <div id="checkDark">
+                        <h3>Checkbox:</h3>
+                        <input id="checkboxDark1" type="checkbox" name="checkboxDark1">
+                        <label for="checkboxDark1">Checkbox #1</label>
+                        <br>
+                        <input type="checkbox" name="checkboxDark2">
+                        <label for="checkboxDark2">Checkbox #2</label>
+                        <br>
+                        <input type="checkbox" name="checkboxDark3">
+                        <label for="checkboxDark3">Checkbox #3</label>
+                        <br>
+                        <input type="checkbox" name="checkboxDark4">
+                        <label for="checkboxDark4">Checkbox #4</label>
+                        <br>
+                        <p>Disabled Checkbox</p>
+                        <input  id="disabledCheckboxDark" type="checkbox" name="disabledCheckboxDark">
+                        <label for="disabledCheckboxDark">Disabled Checkbox</label>
+                        <br>
+                        <input  id="disabledCheckboxDarkChecked" type="checkbox" name="disabledCheckboxDarkChecked">
+                        <label for="disabledCheckboxDarkChecked">Disabled Checkbox Checked</label>
+                    </div>
+                    <div id="radioDark">
+                        <h3>Radio:</h3>
+                        <form>
+                        <input id="radioDark1" type="radio" name="radioDark">
+                        <label for="radioDark1">Radio #1</label>
+                        <br>
+                        <input id="radioDark2" type="radio" name="radioDark">
+                        <label for="radioDark2">Radio #2</label>
+                        <br>
+                        <input id="radioDark3" type="radio" name="radioDark">
+                        <label for="radioDark3">Radio #3</label>
+                        <br>
+                        <input id="radioDark4" type="radio" name="radioDark">
+                        <label for="radioDark4">Radio #4</label>
+                        </form>
+                        <p>Disabled Checkbox</p>
+                        <input  id="disabledRadioDark" type="radio" name="disabledRadioDark">
+                        <label for="disabledRadioDark">Disabled Radio</label>
+                        <br>
+                        <input  id="disabledRadioDarkChecked" type="radio" name="disabledRadioDarkChecked">
+                        <label for="disabledRadioDarkChecked">Disabled Radio Checked</label>
+                    </div>
+                    <div id="switchDark">
+                        <h3>Switch:</h3>
+                        <input type="checkbox" name="switchDark1">
+                        <label for="switchDark1">Switch #1</label>
+                        <br>
+                        <input type="checkbox" name="switchDark2">
+                        <label for="switchDark2">Switch #2</label>
+                        <br>
+                        <input type="checkbox" name="switchDark3">
+                        <label for="switchDark3">Switch #3</label>
+                        <br>
+                        <input type="checkbox" name="switchDark4">
+                        <label for="switchDark4">Switch #4</label>
+                        <br>
+                        <p>Disabled Switch</p>
+                        <input  id="disabledSwitchDark" type="checkbox" name="disabledSwitchDark">
+                        <label for="disabledSwitchDark">Disabled Switch</label>
+                        <br>
+                        <input  id="disabledSwitchDarkChecked" type="checkbox" name="disabledSwitchDarkChecked">
+                        <label for="disabledSwitchDarkChecked">Disabled Switch Checked</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        $(function () {
+            //Light Theme
+            var switchSettings = {
+                isSwitch: true
+            }
+            $('#check input').simpleCheck('init');
+            $('#radio input').simpleCheck('init');
+            $('#switch input').simpleCheck(switchSettings);
+            $('#checkbox1').simpleCheck('check');
+            $('#radio1').simpleCheck('check');
+            $('#disabledCheckbox').simpleCheck('disable');
+            $('#disabledCheckboxChecked').simpleCheck('disable');
+            $('#disabledCheckboxChecked').simpleCheck('check');
+            $('#disabledRadio').simpleCheck('disable');
+            $('#disabledRadioChecked').simpleCheck('disable');
+            $('#disabledRadioChecked').simpleCheck('check');
+            $('#disabledSwitch').simpleCheck('disable');
+            $('#disabledSwitchChecked').simpleCheck('disable');
+            $('#disabledSwitchChecked').simpleCheck('check');
+
+            //Dark Theme
+            var darkTheme = {
+                theme: 'dark'
+            }
+            var darkThemeSwitch = {
+                theme: 'dark',
+                isSwitch: true
+            }
+            $('#checkDark input').simpleCheck(darkTheme);
+            $('#radioDark input').simpleCheck(darkTheme);
+            $('#switchDark input').simpleCheck(darkThemeSwitch);
+            $('#checkboxDark1').simpleCheck('check');
+            $('#radioDark1').simpleCheck('check');
+            $('#disabledCheckboxDark').simpleCheck('disable');
+            $('#disabledCheckboxDarkChecked').simpleCheck('disable');
+            $('#disabledCheckboxDarkChecked').simpleCheck('check');
+            $('#disabledRadioDark').simpleCheck('disable');
+            $('#disabledRadioDarkChecked').simpleCheck('disable');
+            $('#disabledRadioDarkChecked').simpleCheck('check');
+            $('#disabledSwitchDark').simpleCheck('disable');
+            $('#disabledSwitchDarkChecked').simpleCheck('disable');
+            $('#disabledSwitchDarkChecked').simpleCheck('check');
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</html>
