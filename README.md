@@ -1,5 +1,7 @@
 # simpleCheck
 simpleCheck is a jQuery plugin for checkboxes, radios and switches. Easy to use with existing jQuery code.
+[Demo](https://codepen.io/xAzzzu/pen/eMrpeW)
+
 ![alt text](https://raw.githubusercontent.com/xAzzzu/simpleCheck/master/demo.png)
 ### Usage
 init Checkbox
